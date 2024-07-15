@@ -6,6 +6,8 @@ import { useStateValue } from 'context/StateProvider';
 import { getAllAromaItems } from 'utils/firebaseFunction';
 import { actionType } from 'context/reducer';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 const App = () => {
   const [{ aromaItems }, dispatch] = useStateValue();
 
@@ -35,6 +37,7 @@ const App = () => {
         <Footer />
       </div>
       <Analytics />
+      <SpeedInsights/>
     </AnimatePresence>
   );
 };
