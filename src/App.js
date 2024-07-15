@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useStateValue } from 'context/StateProvider';
 import { getAllAromaItems } from 'utils/firebaseFunction';
 import { actionType } from 'context/reducer';
-
+import { Analytics } from '@vercel/analytics/react';
 const App = () => {
   const [{ aromaItems }, dispatch] = useStateValue();
 
@@ -21,6 +21,7 @@ const App = () => {
     fetchData();
   }, [fetchData]);
 
+
   return (
     <AnimatePresence>
       <div className="flex flex-col w-screen h-auto bg-primary">
@@ -33,6 +34,7 @@ const App = () => {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </AnimatePresence>
   );
 };
