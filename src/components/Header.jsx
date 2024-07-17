@@ -70,7 +70,7 @@ const Header = () => {
     <header
       className={`fixed z-50 w-screen p-3 px-10 shadow-lg md:px-16 lg:px-20 transition-all duration-300 ${isScrolled ? 'bg-[#471f578a]' : 'bg-transparent'}`}>
       <div className="items-center justify-between hidden w-full h-full max-w-6xl px-4 mx-auto md:flex md:px-0">
-        <Link to={'/'} className="flex items-center gap-2 ">
+        <Link to={'/'} className="flex items-center gap-[5px]">
           <img src={Logo} alt="logo" className="object-cover w-14" />
           <p className="text-lg font-bold text-mainColor">Aroma Haven</p>
         </Link>
@@ -97,7 +97,7 @@ const Header = () => {
                   smooth={true}
                   offset={-30}
                   duration={300}
-                  className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
+                  className="px-4 text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
                   Menu
                 </ReactLink>
               )}
@@ -152,7 +152,7 @@ const Header = () => {
           )}
         </div>
 
-        <Link to={'/'} className="flex items-center gap-2 drop-shadow-lg">
+        <Link to={'/'} className="flex items-center gap-[5px] drop-shadow-lg">
           <img src={Logo} alt="logo" className="object-cover w-14" />
           <p className="text-lg font-bold text-mainColor">Aroma</p>
         </Link>

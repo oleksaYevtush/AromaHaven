@@ -52,19 +52,19 @@ const CartItem = ({ item, setFlag, flag }) => {
   }, [qty, items]);
 
   return (
-    <div className="flex items-center w-full gap-2 p-1 px-2 bg-[#3e1d3b] rounded-lg">
+    <div className="flex items-center w-full gap-[5px] p-1 px-2 bg-[#3e1d3b] rounded-lg">
       <img
         src={item.imageURL}
         alt=""
         className="w-20 h-20 max-w-[60px] rounded-full object-contain"
       />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-[5px]">
         <p className="text-base text-white">{item?.title}</p>
         <p className="block text-sm font-semibold text-white">
           $ {(parseFloat(item?.price) * qty).toFixed(2)}
         </p>
       </div>
-      <div className="flex items-center gap-2 ml-auto cursor-pointer group">
+      <div className="flex items-center gap-[5px] ml-auto cursor-pointer group">
         <motion.div
           whileTap={{ scale: 0.75 }}
           onClick={() => updateQty('remove', item?.id)}
