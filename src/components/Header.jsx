@@ -82,12 +82,12 @@ const Header = () => {
             className="flex items-center gap-8">
             <Link
               to={'/'}
-              className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
+              className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headerColor">
               Home
             </Link>
             <Link
               to={'/aboutUs'}
-              className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
+              className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headerColor">
               About
             </Link>
             {location.pathname !== '/aboutUs' && (
@@ -97,7 +97,7 @@ const Header = () => {
                   smooth={true}
                   offset={-30}
                   duration={300}
-                  className="px-4 text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
+                  className="px-4 text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headerColor">
                   Menu
                 </ReactLink>
               )}
@@ -127,9 +127,9 @@ const Header = () => {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.6 }}
-                className="absolute right-0 w-40 rounded-lg shadow-xl bg-violet-50 flex-column top-12">
+                className="absolute right-0 w-40 rounded-lg shadow-xl bg-[#723280] flex-column top-12">
                 <p
-                  className="flex items-center px-4 py-2 text-base transition-all duration-100 ease-in-out cursor-pointer text-mainTextColor hover:bg-hoverColor hover:text-white "
+                  className="flex items-center px-4 py-2 text-base transition-all duration-100 ease-in-out cursor-pointer text-white hover:bg-hoverColor hover:text-mainTextColor "
                   onClick={logout}>
                   <MdLogout className="mr-4" /> Log out
                 </p>
@@ -170,7 +170,7 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.6 }}
-              className="absolute right-0 w-40 rounded-lg shadow-xl bg-violet-50 flex-column top-12"
+              className="absolute right-0 w-40 rounded-lg shadow-xl bg-[#562560c1] flex-column top-12"
             >
               <div className="flex flex-col">
                 <Link
@@ -194,13 +194,13 @@ const Header = () => {
                   smooth={true}
                   offset={-30}
                   duration={300}
-                  className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headingColor">
+                  className="text-base transition-all duration-100 ease-in-out cursor-pointer text-mainColor hover:text-headerColor">
                   Menu
                 </ReactLink>
               )}
               </div>
               <p
-                className="flex items-center justify-center p-2 m-2 text-base transition-all duration-100 ease-in-out bg-gray-200 rounded-md shadow-md cursor-pointer text-mainTextColor hover:bg-hoverColor hover:text-white"
+                className="flex items-center justify-center p-2 m-2 text-base transition-all duration-100 ease-in-out bg-[#31143cdb] rounded-md shadow-md cursor-pointer text-[#d0c0e290] hover:bg-hoverColor hover:text-white"
                 onClick={logout}
               >
                 <MdLogout /> Log out

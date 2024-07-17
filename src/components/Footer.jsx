@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-auto bg-[#160c16]">
       <section
-        className="relative w-full p-6 px-10 py-4 mt-8 mb-8 md:px-16 lg:px-20 before:w-full before:left-0 before:top-0 before:bg-mainTextGrey before:content before:absolute after:w-full after:left-0 after:bottom-0 after:bg-mainTextGrey after:content after:absolute ">
+        className="relative w-full p-6 px-10 py-4 mt-8 mb-8 md:px-16 lg:px-20 before:w-full before:left-0 before:top-0 before:bg-textGrey before:content before:absolute after:w-full after:left-0 after:bottom-0 after:bg-textGrey after:content after:absolute ">
         <div className="flex flex-col items-center justify-between w-full h-full max-w-6xl px-4 mx-auto md:px-0">
           <div className="flex items-center justify-center w-full">
             <p className="relative mb-12 text-2xl font-semibold transition-all duration-100 ease-in-out before:absolute before:rounded-lg before:content before:w-20 before:h-1 before:-bottom-2 before:left-11 before:bg-gradient-to-br from-hoverColor to-[#cb57e085] text-mainColor">

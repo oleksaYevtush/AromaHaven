@@ -33,7 +33,7 @@ const HomeContainer = () => {
                 Light
               </span>
             </p>
-            <p className="font-['Mirra'] font-light text-mainTextGrey text-center md:text-center md:w-[70%] sm:text-[50px] md:text-[50px]">
+            <p className="font-['Mirra'] font-light text-textGrey text-center md:text-center md:w-[70%] sm:text-[50px] md:text-[50px]">
               Our goal is to make the world a better</p>
           </div>
         </div>
