@@ -42,7 +42,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
         data.map(item => (
           <div
             key={item?.id}
-            className="min-w-[120px] w-275 h-[230px] md:w-300 md:min-w-[300px] backdrop-blur-xl mt-8 lg:mt-8 mb-4 lg:mb-4 border-none rounded-lg p-4 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
+            className="min-w-[220px] w-275 h-[235px] md:w-300 md:min-w-[300px] backdrop-blur-xl mt-10 lg:mt-[3rem] mb-4 lg:mb-12 border-none rounded-lg p-4 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
             <div className="flex items-center justify-between w-full ">
               <motion.img
                 whileHover={{ scale: 1.2 }}
@@ -57,16 +57,16 @@ const RowContainer = ({ flag, data, scrollValue }) => {
                 <TbShoppingCartStar className={`text-2xl text-mainColor `} />
               </motion.div>
             </div>
-            <div className="flex flex-col items-end justify-end w-full gap-2">
-              <p className="mt-1 text-[14px] tracking-wider text-[#ae76a2]">
+            <div className="flex flex-col justify-end w-full gap-[5px]">
+              <p className="mt-1 text-[18px] lg:text-[18px] sml:text-[13px] tracking-wider text-[#ae76a2]">
                 {item?.base}
               </p>
-              <p className="text-[16px] tracking-wider font-semibold text-mainColor md:text-[18px] tracking-wider">
+              <p className="text-[20px] lg:text-[19px] sml:text-[15px] tracking-wider font-semibold text-mainColor sm:text-[12px] md:text-[12px]">
                 {item?.title}
               </p>
               <div className="flex items-center gap-8">
-                <p className="text-lg font-semibold text-mainColor">
-                  <span className="text-sm text-mainColor">$</span> {item?.price}
+                <p className="text-[20px] font-semibold text-mainColor">
+                  <span className="text-sm lg:text-[12px] text-mainColor">$</span> {item?.price}
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
       ) : (
         <div className="flex flex-col items-center justify-center w-full mb-12">
           <p className="my-10 text-xl font-semibold text-mainColor">Product Not Found</p>
-          <img src={NotFound} alt="notFound" className="h-340" />
+          <img src={NotFound} alt="notFound" className="h-[340px]" />
         </div>
       )}
     </div>

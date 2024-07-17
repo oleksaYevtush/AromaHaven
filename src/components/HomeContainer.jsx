@@ -25,15 +25,15 @@ const HomeContainer = () => {
             preload="metadata"
           ></video>
         </div>
-        <div className="grid w-full h-auto grid-cols-1 gap-6 p-6 px-10 py-4 md:min-h-screen md:grid-cols-1 md:gap-2 md:px-16 ">
+        <div className="grid w-full h-auto grid-cols-1 gap-6 p-6 px-10 py-4 md:min-h-screen md:grid-cols-1 md:gap-[5px] md:px-16 ">
           <div className="flex flex-col items-center flex-1 gap-6 py-2 mt-[90px]">
-            <p className="font-['Mirra'] font-medium lg:text-[50px] text-[30px] tracking-wider text-[#eedfe7d5]">
+            <p className="font-['Mirra'] text-center font-medium lg:text-[50px] text-[30px] tracking-wider text-[#eedfe7d5] sm:text-[50px] md:text-[50px]">
               Expression through Aroma
-              <span className="text-[#68337beb] text-[50px] lg:text-[50px] font-bold">
+              <span className="text-[#68337beb] text-[50px] lg:text-[50px] font-bold sm:text-[50px] md:text-[50px]">
                 Light
               </span>
             </p>
-            <p className="font-['Mirra'] font-light text-[32px] text-mainTextGrey text-center md:text-center md:w-[70%]">
+            <p className="font-['Mirra'] font-light text-mainTextGrey text-center md:text-center md:w-[70%] sm:text-[50px] md:text-[50px]">
               Our goal is to make the world a better</p>
           </div>
         </div>
