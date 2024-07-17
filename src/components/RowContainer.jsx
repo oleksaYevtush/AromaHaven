@@ -42,7 +42,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
         data.map(item => (
           <div
             key={item?.id}
-            className="min-w-[220px] w-275 h-[235px] md:w-300 md:min-w-[300px] backdrop-blur-xl mt-10 lg:mt-[3rem] mb-4 lg:mb-12 border-none rounded-lg p-4 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
+            className="min-w-[220px] w-[275px] h-[235px] md:w-[300px] md:min-w-[300px] backdrop-blur-xl mt-10 lg:mt-[3rem] mb-4 lg:mb-12 border-none rounded-lg p-4 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
             <div className="flex items-center justify-between w-full ">
               <motion.img
                 whileHover={{ scale: 1.2 }}
