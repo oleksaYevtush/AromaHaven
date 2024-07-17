@@ -49,7 +49,6 @@ module.exports = {
         mainTextGrey: '#c3c5c9',
         mainBlack: '#2e2e2e',
         headingColor: '#845EC2',
-        logoColor: '#B39CD060',
         itemBg: 'rgb(86 39 82 / 64%)',
         hoverColor: '#B39CD080',
         hoverColorShadow: '0 2px 6px 0 grey',
