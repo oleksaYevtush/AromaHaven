@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import RowContainer from './RowContainer';
 
 const MenuContainer = () => {
-  const [filter, setFilter] = useState('meat');
+  const [filter, setFilter] = useState('gift'); // Initial category
   const [{ aromaItems }] = useStateValue();
 
   return (
@@ -16,7 +16,7 @@ const MenuContainer = () => {
       <div className="flex flex-col justify-between w-full h-full max-w-6xl px-4 mx-auto md:px-0">
         <div className="flex flex-col items-center justify-center">
           <p className="relative items-center text-2xl font-semibold text-white transition-all duration-100 ease-in-out before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-br from-hoverColor to-[#cb57e085]">
-          FEATURED <span className="text-[#cb57e085]">PRODUCTS</span>
+            FEATURED <span className="text-[#cb57e085]">PRODUCTS</span>
           </p>
           <div className="flex items-center justify-start w-full gap-6 mt-12 mb-12 overflow-x-scroll lg:justify-center scrollbar-none">
             {categories &&
