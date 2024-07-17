@@ -23,14 +23,14 @@ const AboutUs = () => {
       <div className="flex flex-col items-center justify-between w-full h-full px-4 mx-auto md:px-0 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-2 w-full min-h-screen h-auto mt-17 md:mt-[30px] p-6 px-10 md:px-16 py-4">
           <div className="flex flex-col items-start justify-start flex-1 gap-6 py-2 mt-16 xl:justify-center md:mt-18 xl:mt-0">
-            <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-logoColor">
-              <p className="text-base font-semibold text-center text-mainColor">
+            <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-[#fdfdfd91]">
+              <p className="text-base font-semibold text-center text-[#cb57e085]">
                 Best choice
               </p>
             </div>
             <p className="lg:text-[4.0rem] text-[2.5rem] font-bold tracking-wide text-mainColor mb-[20px]">
                 Expression through Aroma
-              <span className="text-logoColor text-[3rem] lg:text-[4.5rem]">
+              <span className="text-[#cb57e085] text-[3rem] lg:text-[4.5rem]">
                 Light
               </span>
             </p>

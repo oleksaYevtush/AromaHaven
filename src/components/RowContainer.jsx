@@ -48,12 +48,12 @@ const RowContainer = ({ flag, data, scrollValue }) => {
                 whileHover={{ scale: 1.2 }}
                 src={item?.imageURL ? item.imageURL : NotFound}
                 alt="image"
-                className="w-[150px] h-[165px] -mt-12"
+                className="w-[147px] h-[165px] -mt-12"
               />
               <motion.div
                 whileTap={{ scale: 0.75 }}
                 onClick={() => addItems(item)}
-                className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer bg-logoColor group">
+                className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer bg-[#cb57e085] group">
                 <TbShoppingCartStar className={`text-2xl text-mainColor `} />
               </motion.div>
             </div>

@@ -32,4 +32,9 @@ export const categories = [
     name: "WAX",
     urlParamName: "wax",
   },
+  {
+    id: 7,
+     name: "GIFT",
+     urlParamName: "gift",
+   },
 ];

@@ -63,7 +63,7 @@ const CartContainer = () => {
         <motion.p
           whileTap={{ scale: 0.75 }}
           onClick={clearCart}
-          className="flex items-center gap-2 p-1 px-2 my-2 text-base bg-gray-100 rounded-md cursor-pointer hover:shadow-md text-mainColor">
+          className="flex items-center gap-2 p-1 px-2 my-2 text-base bg-mainColor rounded-md cursor-pointer hover:shadow-md text-[#50425b]">
           Clear <RiRefreshFill />{' '}
         </motion.p>
       </div>
@@ -101,7 +101,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 onClick={handleCheckout}
-                className="w-full p-2 my-2 text-lg rounded-full bg-logoColor text-gray-50 hover:shadow-lg">
+                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg">
                 Check Out
               </motion.button>
             ) : (
@@ -109,7 +109,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 onClick={handleCheckout}
-                className="w-full p-2 my-2 text-lg rounded-full bg-logoColor text-gray-50 hover:shadow-lg">
+                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg">
                 Login to check out
               </motion.button>
             )}
@@ -119,12 +119,12 @@ const CartContainer = () => {
         <div className="flex flex-col items-center justify-center w-full h-full gap-6">
           <img src={EmptyCart} className="w-300" alt="" />
           {checkoutMessage ? (
-            <p className="text-xl font-semibold text-logoColor">
+            <p className="text-xl font-semibold text-[#cb57e085]">
               {checkoutMessage}
             </p>
           ) : (
-            <p className="text-xl font-semibold text-logoColor">
-              Add some items to your cart
+            <p className="text-xl font-semibold text-[#cb57e085]">
+              Add product to your cart
             </p>
           )}
         </div>

@@ -71,7 +71,7 @@ const CartItem = ({ item, setFlag, flag }) => {
         >
           <BiMinus className="text-mainColor " />
         </motion.div>
-        <p className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-logoColor">
+        <p className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-[#cb57e085]">
           {qty}
         </p>
         <motion.div

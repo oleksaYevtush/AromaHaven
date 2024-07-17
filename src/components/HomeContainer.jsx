@@ -15,13 +15,14 @@ const HomeContainer = () => {
         backgroundSize: 'cover',
       }}>
       <div className="flex flex-col items-center justify-between w-full h-full px-4 mx-auto md:px-0 max-w-7xl">
-        <div className='absolute bottom-0 left-0 overflow-hidden z-2 w-full mix-blend-screen mt-[-50vw]'>
+        <div className='absolute bottom-0 left-0 overflow-hidden z-2 w-full mix-blend-screen mt-[-50vw] md:block hidden'>
           <video
             className={`w-full h-full object-cover border-none`}
             src={CloudsVideo}
             autoPlay
             muted
             loop
+            preload="metadata"
           ></video>
         </div>
         <div className="grid w-full h-auto grid-cols-1 gap-6 p-6 px-10 py-4 md:min-h-screen md:grid-cols-1 md:gap-2 md:px-16 ">
