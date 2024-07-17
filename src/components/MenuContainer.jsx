@@ -12,8 +12,8 @@ const MenuContainer = () => {
   return (
     <section
       id="menu"
-      className="w-full p-6 px-10 py-4 my-6 mb-0 md:mt-8 md:px-16 lg:px-20 drop-shadow-xl">
-      <div className="flex flex-col justify-between w-full h-full max-w-6xl px-4 mx-auto md:px-0">
+      className="w-full my-6 mb-0 p-6 px-10 md:mt-8 md:px-16 lg:px-20 py-4 drop-shadow-xl">
+      <div className="flex flex-col w-full h-full justify-between px-4 md:px-0 max-w-6xl mx-auto">
         <div className="flex flex-col items-center justify-center">
           <p className="relative items-center text-2xl font-semibold text-white transition-all duration-100 ease-in-out before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-br from-hoverColor to-[#cb57e085]">
             FEATURED <span className="text-[#cb57e085]">PRODUCTS</span>
