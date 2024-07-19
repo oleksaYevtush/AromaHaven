@@ -52,15 +52,15 @@ const CartItem = ({ item, setFlag, flag }) => {
   }, [qty, items]);
 
   return (
-    <div className="flex items-center w-full gap-[5px] p-1 px-2 bg-[#3e1d3b] rounded-lg">
+    <div className="flex items-center w-full gap-[5px] p-[2px] px-2 bg-[#3e1d3b] rounded-lg">
       <img
         src={item.imageURL}
         alt=""
         className="w-20 h-20 max-w-[60px] rounded-full object-contain"
       />
       <div className="flex flex-col gap-[5px]">
-        <p className="text-base text-white">{item?.title}</p>
-        <p className="block text-sm font-semibold text-white">
+        <p className="sml:text-[14px] text-base text-white">{item?.title}</p>
+        <p className="block text-sm font-semibold text-white sml:text-[14px]">
           $ {(parseFloat(item?.price) * qty).toFixed(2)}
         </p>
       </div>
