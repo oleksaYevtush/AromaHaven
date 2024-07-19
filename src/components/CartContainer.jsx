@@ -53,7 +53,7 @@ const CartContainer = () => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed top-0 right-0 w-full md:w-[375px] h-screen bg-[#181629] flex flex-col z-[101]"
+      className="fixed top-0 right-0 w-full md:w-[375px] h-screen bg-[#151a1d] flex flex-col z-[101]"
     >
       <div className="flex items-center justify-between w-full p-4 cursor-pointer">
         <motion.div whileTap={{ scale: 0.75 }} onClick={showCart}>
@@ -63,13 +63,13 @@ const CartContainer = () => {
         <motion.p
           whileTap={{ scale: 0.75 }}
           onClick={clearCart}
-          className="flex items-center gap-[5px] p-1 px-2 my-2 text-base bg-mainColor rounded-md cursor-pointer hover:shadow-md text-[#50425b]">
+          className="flex items-center gap-[5px] p-1 px-2 my-2 text-base bg-[#cb57e085] rounded-md cursor-pointer hover:shadow-md text-[#c3c5c9]">
           Clear <RiRefreshFill />{' '}
         </motion.p>
       </div>
       {cartItems && cartItems.length > 0 ? (
-        <div className="w-full h-full bg-[#50425b] rounded-t-[2rem] flex flex-col justify-between items-center">
-          <div className="flex flex-col w-full gap-3 px-6 py-10 overflow-y-scroll h-[340px] md:h-[420px] scrollbar-none">
+        <div className="w-full h-full bg-[#151a1d] rounded-t-[2rem] flex flex-col justify-between items-center">
+          <div className="flex flex-col w-full gap-2 px-6 overflow-y-scroll h-[270px] scrollbar-none">
             {cartItems &&
               cartItems.map(item => (
                 <CartItem
@@ -80,19 +80,19 @@ const CartContainer = () => {
                 />
               ))}
           </div>
-          <div className="w-full flex-1 bg-[#3e1d3b] rounded-t-[2rem] flex flex-col items-center  p-8 gap-4">
+          <div className="w-full flex-1 bg-[#3e1d3b] rounded-t-[2rem] flex flex-col items-center p-[16px]">
             <div className="flex items-center justify-between w-full">
-              <p className="text-lg text-mainColor">Sub Total</p>
-              <p className="text-lg text-mainColor">$ {tot.toFixed(2)}</p>
+              <p className="ml-[15px] text-lg sml:text-[14px] text-mainColor">Sub Total</p>
+              <p className="mr-[15px] text-lg sml:text-[14px] text-mainColor">$ {tot.toFixed(2)}</p>
             </div>
             <div className="flex items-center justify-between w-full">
-              <p className="text-lg text-mainColor">Delivery</p>
-              <p className="text-lg text-mainColor">$ 2.5</p>
+              <p className="ml-[15px] text-lg sml:text-[14px] text-mainColor ">Delivery</p>
+              <p className=" text-lg sml:text-[14px] text-mainColor mr-[20px]">$ 1.5</p>
             </div>
             <div className="w-full my-2 border-b border-mainColor"></div>
             <div className="flex items-center justify-between w-full">
-              <p className="text-xl font-semibold text-mainColor">Total</p>
-              <p className="text-xl font-semibold text-mainColor">
+              <p className="ml-[15px] text-xl sml:text-[14px] font-semibold text-mainColor">Total</p>
+              <p className="text-xl sml:text-[14px] font-semibold text-mainColor mr-[15px]">
                 $ {(tot + 2.5).toFixed(2)}
               </p>
             </div>
@@ -101,7 +101,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 onClick={handleCheckout}
-                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg">
+                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg sml:text-[14px]">
                 Check Out
               </motion.button>
             ) : (
@@ -109,7 +109,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 onClick={handleCheckout}
-                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg">
+                className="w-full p-2 my-2 text-lg rounded-full bg-[#cb57e085] text-gray-50 hover:shadow-lg sml:text-[14px]">
                 Login to check out
               </motion.button>
             )}

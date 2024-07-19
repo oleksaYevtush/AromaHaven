@@ -29,7 +29,7 @@ const MenuContainer = () => {
                     filter === category.urlParamName
                       ? 'bg-[#cb57e085]'
                       : 'bg-itemBg'
-                  } w-24 min-w-[120px] sml:min-w-[80px] h-28 cursor-pointer rounded-lg drop-shadow-xl flex flex-col gap-3 items-center justify-center  hover:bg-[#cb57e085]`}>
+                  } w-24 min-w-[120px] sml:min-w-[90px] h-28 cursor-pointer rounded-lg drop-shadow-xl flex flex-col gap-3 items-center justify-center  hover:bg-[#cb57e085]`}>
                   <div
                     className={`w-10 h-10 rounded-full bg-[#cb57e085] shadow-lg group-hover:bg-itemBg flex items-center justify-center ${
                       filter === category.urlParamName
