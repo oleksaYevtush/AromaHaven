@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Header, MainContainer, AboutUs, Footer } from 'components';
 import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -7,9 +7,12 @@ import { getAllAromaItems } from 'utils/firebaseFunction';
 import { actionType } from 'context/reducer';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import ChatComponent from './components/ChatComponent';
 
 const App = () => {
   const [{ aromaItems }, dispatch] = useStateValue();
+  const [message, setMessage] = useState('');
+  const [response, setResponse] = useState('');
 
   const fetchData = useCallback(async () => {
     const data = await getAllAromaItems();
@@ -23,6 +26,18 @@ const App = () => {
     fetchData();
   }, [fetchData]);
 
+  const handleChatSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message }),
+    });
+    const data = await res.json();
+    setResponse(data);
+  };
 
   return (
     <AnimatePresence>
@@ -35,6 +50,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <ChatComponent />
       </div>
       <Analytics />
       <SpeedInsights/>

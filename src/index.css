@@ -5,6 +5,12 @@
   font-weight: normal;
 }
 @font-face {
+  font-family: "Mogan";
+  src: local("Mogan"),
+   url("./fonts/Mogan.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
   font-family: "Mirra";
   src: local("Mirra"),
    url("./fonts/Mirra.otf") format("opentype");
@@ -38,10 +44,6 @@ body {
 html,
 body {
   scroll-behavior: smooth;
-  /* background-color: #343538; */
-  /* background-color: #181716; */
-  background-color: #fff;
-  /* overflow-y: hidden; */
   overflow-x: hidden;
 }
 
@@ -69,8 +71,3 @@ ul {
 a {
   text-decoration: none;
 }
-/* @media (max-width: 768px) {
-  main {
-    margin-top: 5rem;
-  }
-} */
