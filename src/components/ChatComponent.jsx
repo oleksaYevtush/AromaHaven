@@ -63,14 +63,12 @@ const ChatComponent = () => {
 
       const newMessage = { sender: 'user', content: messageToSend };
       push(ref(database, 'chats'), newMessage);
-
       setChatHistory(prevHistory => [...prevHistory, newMessage]);
       setMessage('');
 
       try {
           const response = await axios.post('http://localhost:5001/chat', { message: messageToSend });
           const botMessage = response.data.content;
-
           const typedBotMessage = await typeMessage(botMessage);
           setChatHistory(prevHistory => [
               ...prevHistory,
@@ -100,7 +98,7 @@ const ChatComponent = () => {
           </div>
           <div className="flex-1 p-2 bg-[#3e1d3b] overflow-y-auto" ref={chatContainerRef}>
               {isLoading ? (
-                  <div className="flex justify-center items-center h-full">
+                  <div className="flex items-center justify-center h-full">
                       <img src={loadingGif} alt="Loading..." className="w-[145px] h-[135px]" />
                   </div>
               ) : (
