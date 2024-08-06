@@ -9,9 +9,11 @@ app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "worker-src 'self' blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval';");
+  res.header("Access-Control-Allow-Origin", "https://aroma-haven.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
 
 app.get('/chat', (req, res) => {
   res.json({ message: 'It works!' });
