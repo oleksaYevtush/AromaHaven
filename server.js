@@ -6,7 +6,12 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:3000' }));
+
+app.use(cors({
+  origin: 'https://aroma-haven.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true
+}));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://aroma-haven.vercel.app");
