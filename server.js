@@ -19,7 +19,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.get('/chat', (req, res) => {
   res.json({ message: 'It works!' });
 });
