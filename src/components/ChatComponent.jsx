@@ -67,7 +67,7 @@ const ChatComponent = () => {
       setMessage('');
 
       try {
-          const response = await axios.post('http://localhost:5001/chat', { message: messageToSend });
+          const response = await axios.post('https://aroma-haven.vercel.app', { message: messageToSend });
           const botMessage = response.data.content;
           const typedBotMessage = await typeMessage(botMessage);
           setChatHistory(prevHistory => [
