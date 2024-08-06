@@ -2,6 +2,7 @@ import { getApp, getApps, initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth, browserSessionPersistence, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
+import { getDatabase } from 'firebase/database'; // Імпорт Firebase Realtime Database
 
 const firebaseConfig = {
   apiKey: "AIzaSyCbZoIn4glO4n0Ifirdc8GmiFDRPhC2NeA",
@@ -17,6 +18,7 @@ const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 const auth = getAuth(app);
+const database = getDatabase(app);
 const provider = new GoogleAuthProvider();
 
 const signInWithGoogle = () => {
@@ -30,4 +32,4 @@ const signInWithGoogle = () => {
     });
 };
 
-export { app, firestore, storage, auth, signInWithGoogle };
+export { app, firestore, storage, auth, database, signInWithGoogle };
