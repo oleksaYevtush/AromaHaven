@@ -67,18 +67,18 @@ const ChatComponent = () => {
       setMessage('');
 
       try {
-          const response = await axios.post('https://aroma-haven.vercel.app', { message: messageToSend });
-          const botMessage = response.data.content;
-          const typedBotMessage = await typeMessage(botMessage);
-          setChatHistory(prevHistory => [
-              ...prevHistory,
-              { sender: 'bot', content: typedBotMessage }
-          ]);
+        const response = await axios.post('https://aroma-haven.vercel.app/chat', { message: messageToSend });
 
-          push(ref(database, 'chats'), { sender: 'bot', content: botMessage });
-      } catch (error) {
-          console.error('Error:', error);
-      }
+        const botMessage = response.data.content;
+        const typedBotMessage = await typeMessage(botMessage);
+        setChatHistory(prevHistory => [
+            ...prevHistory,
+            { sender: 'bot', content: typedBotMessage }
+        ]);
+        push(ref(database, 'chats'), { sender: 'bot', content: botMessage });
+    } catch (error) {
+        console.error('Error sending message to the server:', error);
+    }
   };
 
 
