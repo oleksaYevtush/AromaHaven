@@ -2,7 +2,7 @@ import { getApp, getApps, initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth, browserSessionPersistence, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
-import { getDatabase } from 'firebase/database'; // Імпорт Firebase Realtime Database
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCbZoIn4glO4n0Ifirdc8GmiFDRPhC2NeA",

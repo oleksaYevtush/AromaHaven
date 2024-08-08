@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use(cors({
   origin: 'https://aroma-haven.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: ['GET', 'POST'],
   credentials: true
 }));
 
