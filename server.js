@@ -1,25 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const app = express();
+app.use(cors());
+
 const PORT = process.env.PORT || 5001;
-
 app.use(bodyParser.json());
-
 app.use(cors({
   origin: 'https://aroma-haven.vercel.app',
-  methods: ['GET', 'POST'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
 }));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://aroma-haven.vercel.app");
+  res.header("Access-Control-Allow-Methods", 'GET', 'DELETE', 'HEAD', 'OPTIONS','POST');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.get('/chat', (req, res) => {
+app.post('/chat', (req, res) => {
   res.json({ message: 'It works!' });
 });
 
@@ -30,10 +30,10 @@ const responses = {
 };
 
 app.post('/chat', (req, res) => {
+  console.log('Received message:', req.body);
   const { message } = req.body;
   const messageNumber = parseInt(message.trim());
   const responseMessage = responses[messageNumber] || "Error";
-
   res.json({ content: responseMessage });
 });
 
