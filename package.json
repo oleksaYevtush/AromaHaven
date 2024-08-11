@@ -38,7 +38,7 @@
     "lint:js": "eslint src/**/*.{js,jsx}",
     "serve": "node server.js"
   },
-  "proxy": "https://aromahaven-96c86.firebaseapp.com",
+  "proxy": "https://aroma-haven.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",
