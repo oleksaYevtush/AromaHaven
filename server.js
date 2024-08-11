@@ -3,24 +3,23 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 app.use(cors());
-
-const PORT = process.env.PORT || 5001;
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'https://aroma-haven.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true
-}));
+
+const PORT = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://aroma-haven.vercel.app");
-  res.header("Access-Control-Allow-Methods", 'GET', 'DELETE', 'HEAD', 'OPTIONS','POST');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader('Access-Control-Allow-Origin', 'https://aroma-haven.vercel.app');
+
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 
-app.post('/chat', (req, res) => {
-  res.json({ message: 'It works!' });
+app.options('/chat', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://aroma-haven.vercel.app');
+
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization');
+  res.sendStatus(200);
 });
 
 const responses = {
@@ -38,5 +37,5 @@ app.post('/chat', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`The server is running on port ${PORT}`);
+  console.log(`Server ${PORT}`);
 });
