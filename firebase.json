@@ -8,22 +8,22 @@
   "hosting": {
     "headers": [
       {
-        "source": "**",
+        "source": "/(.*)",
         "headers": [
           {
-            "key": "Cross-Origin-Opener-Policy",
-            "value": "same-origin"
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
           },
           {
-            "key": "Cross-Origin-Embedder-Policy",
-            "value": "require-corp"
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET,HEAD,OPTIONS"
           }
         ]
       }
     ],
     "cors": [
       {
-        "origin": ["*"],
+        "origin": ["https://aroma-haven.vercel.app"],
         "method": ["GET", "HEAD", "POST", "PUT", "DELETE"],
         "maxAgeSeconds": 3600
       }

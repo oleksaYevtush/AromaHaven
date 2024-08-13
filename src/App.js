@@ -29,7 +29,7 @@ const App = () => {
   const handleChatSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch('/chat', {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
