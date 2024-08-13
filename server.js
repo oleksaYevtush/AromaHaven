@@ -28,7 +28,7 @@ const responses = {
   3: "🕯️We offer a wide range of aromatherapy products, including essential oils, diffusers, candles, and therapeutic blends. Explore our selection to find the perfect items for your wellness needs"
 };
 
-app.post('/chat', (req, res) => {
+app.get('/chat', (req, res) => {
   console.log('Received message:', req.body);
   const { message } = req.body;
   const messageNumber = parseInt(message.trim());
