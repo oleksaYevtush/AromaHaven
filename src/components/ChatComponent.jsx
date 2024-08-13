@@ -13,6 +13,7 @@ const ChatComponent = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const typeMessage = (message) => {
+      if (!message) return Promise.resolve('');
         return new Promise(resolve => {
             let i = 0;
             const speed = 150;
@@ -67,8 +68,12 @@ const ChatComponent = () => {
       setMessage('');
 
       try {
-        const response = await axios.get('https://aroma-haven.vercel.app/chat', { message: messageToSend });
-        const botMessage = response.data.content;
+        const response = await axios({
+          method: 'get',
+          url: 'https://aroma-haven.vercel.app/chat',
+          params: { message: messageToSend },
+        });
+        const botMessage = response.data.content || '';
         const typedBotMessage = await typeMessage(botMessage);
         setChatHistory(prevHistory => [
             ...prevHistory,

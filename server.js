@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://aroma-haven.vercel.app');
-
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
@@ -29,10 +29,10 @@ const responses = {
 };
 
 app.get('/chat', (req, res) => {
-  console.log('Received message:', req.body);
-  const { message } = req.body;
-  const messageNumber = parseInt(message.trim());
-  const responseMessage = responses[messageNumber] || "Error";
+  console.log('Received message:', req.query);
+  const { message } = req.query;
+  const messageNumber = parseInt(message);
+  const responseMessage = responses[messageNumber] || "I'm sorry, I don't understand that question. Can you please choose a number from the options provided?";
   res.json({ content: responseMessage });
 });
 
