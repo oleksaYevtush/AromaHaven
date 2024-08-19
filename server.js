@@ -17,7 +17,6 @@ app.use((req, res, next) => {
 
 app.options('/chat', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://aroma-haven.vercel.app');
-
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization');
   res.sendStatus(200);
 });
@@ -29,10 +28,19 @@ const responses = {
 };
 
 app.get('/chat', (req, res) => {
-  console.log('Received message:', req.query);
+  console.log('Received query:', req.query);
   const { message } = req.query;
+  console.log('Extracted message:', message);
   const messageNumber = parseInt(message);
-  const responseMessage = responses[messageNumber] || "I'm sorry, I don't understand that question. Can you please choose a number from the options provided?";
+  console.log('Parsed message number:', messageNumber);
+
+  if (isNaN(messageNumber) || !responses[messageNumber]) {
+      console.log('Invalid message number:', messageNumber);
+      return res.json({ content: "I'm sorry, I don't understand that question. Can you please choose a number from the options provided?" });
+  }
+
+  const responseMessage = responses[messageNumber];
+  console.log('Response message:', responseMessage);
   res.json({ content: responseMessage });
 });
 
