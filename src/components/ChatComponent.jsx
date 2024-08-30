@@ -72,6 +72,8 @@ const ChatComponent = () => {
               params: { message: messageToSend }
           });
           const botMessage = response.data.content || '';
+          console.log('Server response:', botMessage);
+
           const typedBotMessage = await typeMessage(botMessage);
           setChatHistory(prevHistory => [
               ...prevHistory,
@@ -81,11 +83,24 @@ const ChatComponent = () => {
       } catch (error) {
           console.error('Error sending message to the server:', error);
       }
+    };
+
+    const responses = {
+      1: "Aromatherapy is a holistic healing treatment that uses natural plant extracts to promote health and well-being.",
+      2: "To choose your favorite flavor, consider what scents you are naturally drawn to and what benefits you are seeking.",
+      3: "Our site offers a variety of aromatherapy products including essential oils, diffusers, and more."
   };
 
     const handleOptionClick = (option) => {
-        sendMessage(option.split('. ')[0]);
-    };
+      const messageNumber = option.split('-')[0];
+      const selectedMessage = responses[messageNumber];
+      if (selectedMessage) {
+          sendMessage(selectedMessage);
+      } else {
+          sendMessage(messageNumber);
+      }
+  };
+
 
     if (!isOpen) return null;
 
