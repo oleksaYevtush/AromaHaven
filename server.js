@@ -23,15 +23,14 @@ app.options('/chat', (req, res) => {
 
 const responses = {
   1: "Aromatherapy is a holistic healing treatment using natural plant extracts, like essential oils, to promote physical and emotional well-being",
-  2: "👐To choose your favorite flavor, start by considering your taste preferences. Try sampling various options, paying attention to the ingredients and flavor profiles. Enjoy the process of discovery and trust your instincts))",
-  3: "🕯️We offer a wide range of aromatherapy products, including essential oils, diffusers, candles, and therapeutic blends. Explore our selection to find the perfect items for your wellness needs"
+  2: "To choose your favorite flavor, start by considering your taste preferences. Try sampling various options, paying attention to the ingredients and flavor profiles. Enjoy the process of discovery and trust your instincts))",
+  3: "We offer a wide range of aromatherapy products, including essential oils, diffusers, candles, and therapeutic blends. Explore our selection to find the perfect items for your wellness needs"
 };
 
 app.get('/chat', (req, res) => {
   console.log('Received query:', req.query);
   const { message } = req.query;
-  console.log('Extracted message:', message);
-  const messageNumber = parseInt(message);
+  const messageNumber = parseInt(message.trim(), 10);
   console.log('Parsed message number:', messageNumber);
 
   if (isNaN(messageNumber) || !responses[messageNumber]) {
@@ -43,6 +42,7 @@ app.get('/chat', (req, res) => {
   console.log('Response message:', responseMessage);
   res.json({ content: responseMessage });
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server ${PORT}`);
