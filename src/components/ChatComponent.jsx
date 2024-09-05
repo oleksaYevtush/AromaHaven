@@ -4,11 +4,12 @@ import { database } from '../firebase.config';
 import { ref, push } from 'firebase/database';
 import loadingGif from '../img/loading.gif';
 import closeIcon from '../img/close.svg';
+import openIcon from '../img/open.png';
 
 const ChatComponent = () => {
     const [message, setMessage] = useState('');
     const [chatHistory, setChatHistory] = useState([]);
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const chatContainerRef = useRef(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -101,8 +102,17 @@ const ChatComponent = () => {
       }
   };
 
-
-    if (!isOpen) return null;
+  if (!isOpen) {
+    return (
+        <button
+            onClick={() => setIsOpen(true)}
+            className="fixed p-2 transform -translate-y-1/2 top-1/2 animate-pulse">
+            <div className="bg-[#190e1dba] rounded-full p-2">
+                <img src={openIcon} alt="Open chat" className="w-[65px] h-[65px]" />
+            </div>
+        </button>
+    );
+}
 
     return (
       <div className="fixed bottom-0 left-0 w-[230px] h-[450px] bg-[#151a1d] shadow-lg rounded-t-lg flex flex-col">
