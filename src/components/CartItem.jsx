@@ -19,25 +19,24 @@ const CartItem = ({ item, setFlag, flag }) => {
 
   const updateQty = (action, id) => {
     if (action === 'add') {
-      setQty(qty + 1);
+      setQty(prevQty => Number(prevQty) + 1);
       cartItems.map(item => {
         if (item.id === id) {
-          item.qty += 1;
+          item.qty = Number(item.qty) + 1;
           setFlag(flag + 1);
         }
       });
       cartDispatch();
     } else {
-
       if (qty === 1) {
         items = cartItems.filter(item => item.id !== id);
         setFlag(flag + 1);
         cartDispatch();
       } else {
-        setQty(qty - 1);
+        setQty(prevQty => Number(prevQty) - 1);
         cartItems.map(item => {
           if (item.id === id) {
-            item.qty -= 1;
+            item.qty = Number(item.qty) - 1;
             setFlag(flag + 1);
           }
         });
