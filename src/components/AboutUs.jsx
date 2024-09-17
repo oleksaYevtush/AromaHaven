@@ -2,15 +2,6 @@ import React from 'react';
 import HeroBg from '../img/444.jpg';
 
 const AboutUs = () => {
-  // useEffect(() => {
-  //   // Set overflow to hidden when the component mounts
-  //   document.body.style.overflow = 'hidden';
-
-  //   // Cleanup: set overflow back to default when the component unmounts
-  //   return () => {
-  //     document.body.style.overflow = 'visible';
-  //   };
-  // }, []);
   return (
     <section
       className="w-full h-auto min-h-screen scroll-x-none"

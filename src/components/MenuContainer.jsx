@@ -12,13 +12,13 @@ const MenuContainer = () => {
   return (
     <section
       id="menu"
-      className="w-full my-6 mb-0 p-6 px-10 md:mt-8 md:px-16 lg:px-20 py-4 drop-shadow-xl">
+      className="w-full my-6 mb-0 p-6 px-10 md:mt-8 md:px-16 lg:px-20 py-4 sxl:py-2 drop-shadow-xl">
       <div className="flex flex-col w-full h-full justify-between px-4 md:px-0 max-w-6xl mx-auto">
         <div className="flex flex-col items-center justify-center">
-          <p className="relative items-center text-2xl font-semibold text-white transition-all duration-100 ease-in-out before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-br from-hoverColor to-[#cb57e085]">
+          <p className="relative items-center text-4xl font-semibold text-white transition-all duration-100 ease-in-out before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-br from-hoverColor to-[#cb57e085]">
             FEATURED <span className="text-[#cb57e085]">PRODUCTS</span>
           </p>
-          <div className="flex items-center justify-start w-full gap-6 mt-12 mb-12 overflow-x-scroll lg:justify-center scrollbar-none">
+          <div className="flex items-center justify-start w-full gap-6 sxl:gap-3 mt-12 mb-12 sxl:mb-3 overflow-x-scroll lg:justify-center scrollbar-none">
             {categories &&
               categories.map(category => (
                 <motion.div
@@ -29,7 +29,7 @@ const MenuContainer = () => {
                     filter === category.urlParamName
                       ? 'bg-[#cb57e085]'
                       : 'bg-itemBg'
-                  } w-24 min-w-[120px] sml:min-w-[90px] h-28 cursor-pointer rounded-lg drop-shadow-xl flex flex-col gap-3 items-center justify-center  hover:bg-[#cb57e085]`}>
+                  } w-[150px] sml:w-[90px] sxl:w-[90px] h-28 sxl:h-[83px] cursor-pointer rounded-lg drop-shadow-xl flex flex-col gap-3 items-center justify-center  hover:bg-[#cb57e085]`}>
                   <div
                     className={`w-10 h-10 rounded-full bg-[#cb57e085] shadow-lg group-hover:bg-itemBg flex items-center justify-center ${
                       filter === category.urlParamName
@@ -44,7 +44,7 @@ const MenuContainer = () => {
                     />
                   </div>
                   <p
-                    className={` group-hover:text-white text-base sml:text-[13px] ${
+                    className={` group-hover:text-white text-base sml:text-[13px] sxl:text-[13px] ${
                       filter === category.urlParamName
                         ? 'text-white'
                         : 'text-mainColor'}`}>

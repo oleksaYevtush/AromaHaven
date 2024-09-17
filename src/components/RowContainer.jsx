@@ -44,20 +44,20 @@ const RowContainer = ({ flag, data, scrollValue }) => {
     <div>
       <div
         ref={rowContainer}
-        className={`w-full flex items-center gap-4 scroll-smooth ${
+        className={`w-full flex items-center gap-[20px] scroll-smooth ${
           flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-x-hidden flex-wrap justify-center'
         }`}>
         {data && data.length > 0 ? (
           data.map(item => (
             <div
               key={item?.id}
-              className="min-w-[220px] w-[275px] h-[235px] md:w-[300px] md:min-w-[300px] backdrop-blur-xl mt-10 lg:mt-[3rem] mb-4 lg:mb-12 border-none rounded-lg p-4 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
+              className="min-w-[220px] w-[275px] h-[235px] md:w-[300px] md:min-w-[300px] sxl:w-[245px] sxl:h-[205px] backdrop-blur-xl mt-10 lg:mt-[48px] mb-4 lg:mb-12 border-none rounded-lg p-2 cursor-pointer flex flex-col items-center justify-between bg-itemBg">
               <div className="flex items-center justify-between w-full ">
                 <motion.img
                   whileHover={{ scale: 0.75 }}
                   src={item?.imageURL ? item.imageURL : NotFound}
                   alt="image"
-                  className="w-[155px] h-[165px] -mt-12"
+                  className="w-[155px] h-[165px] sxl:w-[135px] sxl:h-[145px] -mt-12"
                 />
                 <motion.div
                   whileTap={{ scale: 0.75 }}
@@ -68,11 +68,11 @@ const RowContainer = ({ flag, data, scrollValue }) => {
                   <TbShoppingCartStar className={`text-2xl text-mainColor`} />
                 </motion.div>
               </div>
-              <div className="flex flex-col justify-end w-full gap-[5px]">
-                <p className="mt-1 text-[18px] lg:text-[18px] sml:text-[13px] tracking-wider text-[#ae76a2]">
+              <div className="flex flex-col justify-end items-end w-full gap-[5px]">
+                <p className="mt-1 text-[18px] lg:text-[16px] sml:text-[13px] sxl:text-[13px] tracking-wider text-[#ae76a2]">
                   {item?.base}
                 </p>
-                <p className="text-[20px] lg:text-[19px] sml:text-[15px] tracking-wider font-semibold text-mainColor sm:text-[12px] md:text-[12px]">
+                <p className="text-[20px] lg:text-[19px] sml:text-[15px] sxl:text-[15px] tracking-wider font-semibold text-mainColor sm:text-[12px] md:text-[12px]">
                   {item?.title}
                 </p>
                 <div className="flex items-center gap-8">
