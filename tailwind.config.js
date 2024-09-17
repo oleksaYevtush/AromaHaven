@@ -16,6 +16,7 @@ module.exports = {
         cartItem: '#2e3033',
       },
       screens: {
+        sxl: '320px',
         sml: '375px',
         sm: '640px',
         md: '768px',

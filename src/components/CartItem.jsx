@@ -61,8 +61,9 @@ const CartItem = ({ item, setFlag, flag }) => {
       <div className="flex flex-col gap-[5px]">
         <p className="sml:text-[14px] text-base text-white">{item?.title}</p>
         <p className="block text-sm font-semibold text-white sml:text-[14px]">
-          $ {(parseFloat(item?.price) * qty).toFixed(2)}
+          $ {(parseFloat(item?.price || 0) * qty).toFixed(2)}
         </p>
+
       </div>
       <div className="flex items-center gap-[5px] ml-auto cursor-pointer group">
         <motion.div

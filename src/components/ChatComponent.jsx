@@ -45,7 +45,7 @@ const ChatComponent = () => {
             const typedInitialMessage = await typeMessage(initialMessage);
             setChatHistory([{ sender: 'bot', content: typedInitialMessage }]);
 
-            const options = ["1-What is aromatherapy?", "2-How to choose your favorite flavor", "3-What products are on the site"];
+            const options = ["1 ~ What is aromatherapy?", "2 ~ How to choose your favorite flavor?", "3 ~ What products are on the site?"];
             for (const option of options) {
               await sleep(1000);
               const typedOption = await typeMessage(option);

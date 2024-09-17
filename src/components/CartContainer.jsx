@@ -12,7 +12,6 @@ const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
-  // eslint-disable-next-line no-unused-vars
   const [checkoutMessage, setCheckoutMessage] = useState('');
 
   const showCart = () => {
@@ -31,7 +30,7 @@ const CartContainer = () => {
       setTot(0);
     }
      console.log(tot);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [tot, flag, cartItems]);
 
   const clearCart = () => {
@@ -70,15 +69,11 @@ const CartContainer = () => {
       {cartItems && cartItems.length > 0 ? (
         <div className="w-full h-full bg-[#151a1d] rounded-t-[2rem] flex flex-col justify-between items-center">
           <div className="flex flex-col w-full gap-2 px-6 overflow-y-scroll h-[270px] scrollbar-none">
-            {cartItems &&
-              cartItems.map(item => (
-                <CartItem
-                  key={item.id}
-                  item={item}
-                  setFlag={setFlag}
-                  flag={flag}
-                />
-              ))}
+          {cartItems &&
+            cartItems.map((item, index) => (
+              <CartItem key={item.id || index} item={item} setFlag={setFlag} flag={flag} />
+            ))
+            }
           </div>
           <div className="w-full flex-1 bg-[#3e1d3b] rounded-t-[2rem] flex flex-col items-center p-[16px]">
             <div className="flex items-center justify-between w-full">
