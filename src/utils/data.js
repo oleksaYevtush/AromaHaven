@@ -19,7 +19,7 @@ export const categories = [
   },
   {
     id: 4,
-    name: "AROMA OIL",
+    name: "OIL",
     urlParamName: "oil",
   },
   {
