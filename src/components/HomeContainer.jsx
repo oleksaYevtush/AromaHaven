@@ -29,7 +29,7 @@ const HomeContainer = () => {
           <div className="flex flex-col items-center flex-1 gap-4 py-2 mt-[90px] sml:mt-[70px]">
             <p className="font-['Mirra'] text-center font-medium lg:text-[50px] text-[30px] tracking-wider text-[#eedfe7d5] sm:text-[50px] md:text-[50px]">
               Expression through Aroma
-              <span className="text-[#68337beb] text-[50px] lg:text-[50px] sml:text-[45px] font-bold sm:text-[50px] md:text-[50px]">
+              <span className="text-[#68337beb] text-[50px] lg:text-[50px] sml:text-[40px] font-bold sm:text-[50px] md:text-[50px]">
                 Light
               </span>
             </p>
